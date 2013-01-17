@@ -6,7 +6,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @checklists }
+#     format.json { render json: @checklists }
     end
   end
 
@@ -14,10 +14,10 @@ class ChecklistsController < ApplicationController
   # GET /checklists/1.json
   def show
     @checklist = Checklist.find(params[:id])
-
+    @items = @checklist.items.all
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @checklist }
+#     format.json { render json: @checklist }
     end
   end
 
@@ -28,7 +28,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @checklist }
+#     format.json { render json: @checklist }
     end
   end
 
@@ -45,10 +45,10 @@ class ChecklistsController < ApplicationController
     respond_to do |format|
       if @checklist.save
         format.html { redirect_to @checklist, notice: 'Checklist was successfully created.' }
-        format.json { render json: @checklist, status: :created, location: @checklist }
+#       format.json { render json: @checklist, status: :created, location: @checklist }
       else
         format.html { render action: "new" }
-        format.json { render json: @checklist.errors, status: :unprocessable_entity }
+#       format.json { render json: @checklist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,10 +61,10 @@ class ChecklistsController < ApplicationController
     respond_to do |format|
       if @checklist.update_attributes(params[:checklist])
         format.html { redirect_to @checklist, notice: 'Checklist was successfully updated.' }
-        format.json { head :no_content }
+#       format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @checklist.errors, status: :unprocessable_entity }
+#       format.json { render json: @checklist.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -77,7 +77,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to checklists_url }
-      format.json { head :no_content }
+#     format.json { head :no_content }
     end
   end
 end
