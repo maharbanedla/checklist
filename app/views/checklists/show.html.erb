@@ -9,16 +9,15 @@
 	<li><%= item.content %>
 	</li>
 <% end %>
-</ol>
-<h2>Add an item...</h2>
+<li>
 <%= form_for([@checklist, @checklist.items.build]) do |f| %>
 	<div class="field">
-		<%= f.label :content %><br />
 		<%= f.text_area :content %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
 	</div>
 <% end %>
-
-<%= link_to 'Back to Checklists', checklists_path %> |
+</li>
+</ol>
+<%= link_to 'Back to Checklists', checklists_path %>
