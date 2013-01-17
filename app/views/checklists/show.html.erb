@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<b>Checklist Name:</b>
+<%= @checklist.name %>
+</p>
+
+<h2>Add an item...</h2>
+<%= form_for([@checklist, @checklist.items.build]) do |f| %>
+	<div class="field">
+		<%= f.label :content %><br />
+		<%= f.text_area :content %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<%= link_to 'Edit Checklist', edit_checklist_path(@checklist) %> |
+<%= link_to 'Back to Checklists', checklists_path %> |
+
+<%= link_to 'Edit', edit_checklist_path(@checklist) %> |
+<%= link_to 'Back', checklists_path %>
