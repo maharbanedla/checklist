@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-<%= @checklist.name %>
+<h1><%= @checklist.name %></h1>
+<p>
 <%= link_to 'Edit', edit_checklist_path(@checklist) %>
-</h1>
+</p>
 <ol>
 <% @checklist.items.each do |item| %>
-	<li><%= item.content %>
+	<li>
+	<%= item.content %>
 	</li>
 <% end %>
 <li>
 <%= form_for([@checklist, @checklist.items.build]) do |f| %>
 	<div class="field">
-		<%= f.text_area :content %>
+		<%= f.text_field :content, :rows => 1, :autofocus => true %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
