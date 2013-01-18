@@ -5,7 +5,7 @@
 <%= link_to 'Edit', edit_checklist_path(@checklist) %>
 </p>
 <ol>
-<% @checklist.items.each do |item| %>
+<% @items.each do |item| %>
 	<li>
 	<%= item.content %>
 	</li>

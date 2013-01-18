@@ -14,7 +14,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/1.json
   def show
     @checklist = Checklist.find(params[:id])
-    @items = @checklist.items.all.sort!
+    @items = @checklist.items.find(:all, :order => "id")
     respond_to do |format|
       format.html # show.html.erb
 #     format.json { render json: @checklist }
