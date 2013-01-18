@@ -2,7 +2,6 @@
 
 <h1><%= @checklist.name %></h1>
 <p>
-<%= link_to 'Edit', edit_checklist_path(@checklist) %>
 </p>
 <ol>
 <% @items.each do |item| %>
@@ -21,4 +20,5 @@
 <% end %>
 </li>
 </ol>
-<%= link_to 'Back to Checklists', checklists_path %>
+<%= link_to 'Back to Checklists', checklists_path %> | 
+<%= link_to 'Edit Title', edit_checklist_path(@checklist) %>
