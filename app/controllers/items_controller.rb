@@ -9,4 +9,11 @@ class ItemsController < ApplicationController
 		@item = @checklist.items.create(params[:item])
 		redirect_to checklist_path(@checklist)
 	end
+
+	def destroy
+		@checklist = Checklist.find(params[:checklist_id])
+		@item = @checklist.items.find(params[:item])
+		@item.destroy
+		redirect_to checklist_path(@checklist)
+	end
 end

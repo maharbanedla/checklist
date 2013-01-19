@@ -6,9 +6,10 @@
 <ol>
 <% @items.each do |item| %>
 	<li>
-	<%= item.content %>
+<%= item.content %>
 	</li>
 <% end %>
+
 <li>
 <%= form_for([@checklist, @checklist.items.build]) do |f| %>
 	<div class="field">

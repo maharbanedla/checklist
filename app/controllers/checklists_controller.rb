@@ -1,4 +1,5 @@
 class ChecklistsController < ApplicationController
+	http_basic_authenticate_with :name => "maharbanedla", :password => "m@h@rb@n3d1@"
   # GET /checklists
   # GET /checklists.json
   def index
