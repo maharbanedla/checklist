@@ -1,25 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @checklist.name %></h1>
-<p>
-</p>
-<ol>
-<% @items.each do |item| %>
-	<li>
-<%= item.content %>
-	</li>
-<% end %>
+<div class="row">
+	<header class="six columns centered">
+		<h1><%= @checklist.name %></h1>
+	</header>
+</div>
 
-<li>
-<%= form_for([@checklist, @checklist.items.build]) do |f| %>
-	<div class="field">
-		<%= f.text_field :content, :rows => 1, :autofocus => true %>
+<div class="row">
+	<div class="six columns centered">
+		<ul>
+		<% @items.each do |item| %>
+			<li>
+			<%= item.content %>
+			</li>
+		<% end %>
+		</ul>
+		<%= form_for([@checklist, @checklist.items.build]) do |f| %>
+			<div class="field">
+				<%= f.text_field :content, :rows => 1, :autofocus => true %>
+			</div>
+			<div class="actions">
+				<%= f.submit :class => 'button' %>
+			</div>
+		<% end %>
 	</div>
-	<div class="actions">
-		<%= f.submit %>
+</div>
+
+<div class="row">
+	<div class="six columns centered">
+		<%= link_to 'Back to Checklists', checklists_path %> | 
+		<%= link_to 'Edit Title', edit_checklist_path(@checklist) %>
 	</div>
-<% end %>
-</li>
-</ol>
-<%= link_to 'Back to Checklists', checklists_path %> | 
-<%= link_to 'Edit Title', edit_checklist_path(@checklist) %>
+</div>
