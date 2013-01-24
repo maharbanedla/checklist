@@ -11,7 +11,8 @@
 		<ul>
 		<% @items.each do |item| %>
 			<li>
-			<%= item.content %>
+			<%= item.content %>     
+			<%= link_to '[Del]', [@checklist, item], :method => :delete %>
 			</li>
 		<% end %>
 		</ul>

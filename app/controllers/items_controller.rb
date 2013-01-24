@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
 	def destroy
 		@checklist = Checklist.find(params[:checklist_id])
-		@item = @checklist.items.find(params[:item])
+		@item = @checklist.items.find(params[:id])
 		@item.destroy
 		redirect_to checklist_path(@checklist)
 	end
